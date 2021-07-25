@@ -1,7 +1,8 @@
 from django import forms
 
 
-class ToggleFieldWidget(forms.RadioSelect):
+class ToggleWidget(forms.RadioSelect):
     def render(self, name, value, attrs=None, renderer=None):
-        return super(ToggleFieldWidget, self).\
+        attrs = {**{"class": "django-toggle-field"}, **}
+        return super(ToggleWidget, self).\
             render(name, value, attrs, renderer)
