@@ -1,11 +1,10 @@
-from django import forms
+from django.forms.widgets import Input
 
 
-class ToggleSwitchWidget(forms.RadioSelect):
-    input_type = 'radio'
-    template_name = 'django/forms/widgets/radio.html'
+class ToggleSwitchWidget(Input):
+    input_type = 'checkbox'
+    template_name = 'toggle/toggle.html'
 
     def render(self, name, value, attrs=None, renderer=None):
-        attrs = {**{"class": "django-toggle-field"}, **attrs}
         return super(ToggleSwitchWidget, self).\
             render(name, value, attrs, renderer)
