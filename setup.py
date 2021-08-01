@@ -1,13 +1,23 @@
 from setuptools import find_packages, setup
-
+import togglefield
 
 setup_requires = [
     "wheel",
 ]
 
+def read_file(path: str):
+    with open(path, "r") as file:
+        return file.read()
+
 setup(
-    name="djangotogglefield",
-    version=00.1,
+    name="togglefield",
+    version=togglefield.__version__,
+    url=togglefield.__url__,
+    description=togglefield.__doc__,
+    long_description=read_file("README.md"),
+    author=togglefield.__author__,
+    author_email=togglefield.__email__,
+    license=togglefield.__license__,
     platforms="any",
     classifiers=[
         "Environment :: Web Environment",
@@ -27,5 +37,6 @@ setup(
     ],
     packages=find_packages(),
     package_data={'':['*.html', '*.js', '*.css']},
-    include_package_data=True
+    include_package_data=True,
+    install_requires=read_file("requirements.txt").splitlines(),
 )
