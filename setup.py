@@ -14,7 +14,6 @@ setup(
     version=togglefield.__version__,
     url=togglefield.__url__,
     description=togglefield.__doc__,
-    long_description=read_file("README.md"),
     author=togglefield.__author__,
     author_email=togglefield.__email__,
     license=togglefield.__license__,
